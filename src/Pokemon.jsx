@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
+
 const Pokemon = () => {
 
 const [pokemon , setPokemon] =  useState([]);
@@ -38,19 +39,24 @@ const fetchPokemonDetails = async () => {
 
   return (
     <div className='container mx-auto'>
-      <h1 className='text-center mt-10 text-3xl font-bold'>Welcome to Pokemon websites !</h1>
+      <h1 className='text-center p-10 font-semibold text-3xl'>Welcome to Pokemon Website..</h1>
+
+      {/* for card */}
+      <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
+        {pokemon.map((currentPokemon, index) => {
+          return (
+            <div key={index} className='bg-gray-100 p-4 rounded-lg shadow-lg'>
+              <img className='mx-auto' src={currentPokemon.sprites.front_default} alt={currentPokemon.name} />
+              <h2 className='text-2xl font-semibold text-center'>{currentPokemon.name}</h2>
+              <p className='text-center'>Height: {currentPokemon.height}</p>
+              <p className='text-center'>Weight: {currentPokemon.weight}</p>
+            </div>
+          )
+        })}
+        </div>
 
 
-      <ul className='grid grid-cols-4 mt-10 '>
-        {
-          pokemon.map((currentPokemon)=>(
-            <li>{currentPokemon.name}</li>
-          ))
-        }
-      </ul>
-
-
-    </div>
+</div>
   )
 }
 
