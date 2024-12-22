@@ -4,6 +4,7 @@ import { useParams } from 'react-router';
 const PokemonDetails = () => {
   const { id } = useParams(); // Fetch the dynamic `id` from the URL
   const [pokemon, setPokemon] = useState(null);
+  
   const API = `https://pokeapi.co/api/v2/pokemon/${id}`;
 
   const fetchPokemonData = async () => {
@@ -29,7 +30,7 @@ const PokemonDetails = () => {
       <h1 className="text-4xl font-bold">{pokemon.name}</h1>
       <img
         className="mx-auto mt-4 w-[200px] h-[200px]"
-        src={pokemon.sprites.front_default}
+        src={pokemon.sprites. other.dream_world.front_default}
         alt={pokemon.name}
       />
       <p className="text-xl mt-4">Height: {pokemon.height}</p>
