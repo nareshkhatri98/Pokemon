@@ -5,5 +5,6 @@
 @tailwind utilities;
 
 *{
-    font-family: "Roboto", serif;;
+    font-family: "Roboto", serif;
+    background: rgb(234, 231, 231);
 }
